@@ -34,5 +34,23 @@ namespace ClassLibrary1.Application.Services.Tests
             //assert
             mockPersistence.Verify(x => x.SaveSomething3(something3));
         }
+        [TestMethod()]
+        public void CreateSomething3__PersistsSomething3WithFullName()
+        {
+            //arrange
+            var mockSomething3Factory = new Mock<ISomething3Factory>();
+            var fullName = "Fred Bloggs";
+            var something3 = new Something3()
+            {
+                FullName = fullName
+            };
+            mockSomething3Factory.Setup(x => x.Create(fullName)).Returns(something3);
+            var mockPersistence = new Mock<IClassLibraryPersistence>();
+            Something3Interactor something3Interactor = new Something3Interactor(mockSomething3Factory.Object, mockPersistence.Object);
+            //act
+            something3Interactor.CreateSomething3(fullName);
+            //assert
+            mockPersistence.Verify(x => x.SaveSomething3(something3));
+        }
     }
 }

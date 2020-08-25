@@ -1,21 +1,30 @@
-﻿using ClassLibrary1.Core;
+﻿using ClassLibrary1.Application.Services;
 using ClassLibrary1.Core.Model;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ISomething3Factory something3Factory;
+        private readonly Something3Interactor something3Interactor;
+        private readonly Something3DisplayInteractor something3DisplayInteractor;
 
-        public HomeController(ISomething3Factory something3Factory)
+        public HomeController(Something3Interactor something3Interactor, Something3DisplayInteractor something3DisplayInteractor)
         {
-            this.something3Factory = something3Factory;
+            this.something3Interactor = something3Interactor;
+            this.something3DisplayInteractor = something3DisplayInteractor;
         }
         [HttpPost]
-        public Something3 Create([FromQuery] string fullName)
+        public void Create([FromQuery] string fullName)
         {
-            return something3Factory.Create(fullName);
+            something3Interactor.CreateSomething3(fullName);
+        }
+        [HttpGet]
+        public List<Something3> GetList()
+        {
+            return something3DisplayInteractor.GetSomething3List().ToList();
         }
     }
 }

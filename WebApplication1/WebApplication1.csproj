@@ -5,7 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1.Core\ClassLibrary1.Core.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1.Application\ClassLibrary1.Application.csproj" />
+    <ProjectReference Include="..\ClassLibrary1.Database\ClassLibrary1.Database.csproj" />
   </ItemGroup>
 
 </Project>

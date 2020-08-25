@@ -18,5 +18,11 @@ namespace ClassLibrary1.Application.Services
             var something3 = something3Factory.Create();
             persistence.SaveSomething3(something3);
         }
+
+        public void CreateSomething3(string fullName)
+        {
+            var something3 = something3Factory.Create(fullName);
+            persistence.SaveSomething3(something3);
+        }
     }
 }
