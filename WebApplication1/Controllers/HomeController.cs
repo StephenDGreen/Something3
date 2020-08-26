@@ -22,11 +22,13 @@ namespace WebApplication1.Controllers
             this.ctx = ctx;
         }
         [HttpPost]
+        [Route("api/things")]
         public void Create([FromQuery] string fullName)
         {
             something3Interactor.CreateSomething3(fullName);
         }
         [HttpGet]
+        [Route("api/things")]
         public List<Something3WithId> GetList()
         {
             var ret = ctx.Something3s.Select(x => new Something3WithId()
@@ -34,6 +36,17 @@ namespace WebApplication1.Controllers
                 Id = EF.Property<int>(x, "Id"),
                 FullName = x.FullName
             }).ToList();
+            return ret;
+        }
+        [HttpGet]
+        [Route("api/things/{id:int?}")]
+        public Something3WithId Get(int id)
+        {
+            var ret = ctx.Something3s.Select(x => new Something3WithId()
+            {
+                Id = EF.Property<int>(x, "Id"),
+                FullName = x.FullName
+            }).FirstOrDefault(y => y.Id == id);
             return ret;
         }
     }
