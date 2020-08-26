@@ -1,8 +1,11 @@
 ﻿using ClassLibrary1.Application.Services;
 using ClassLibrary1.Core.Model;
+using ClassLibrary1.Database;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WebApplication1.Controllers
 {
@@ -10,11 +13,13 @@ namespace WebApplication1.Controllers
     {
         private readonly Something3Interactor something3Interactor;
         private readonly Something3DisplayInteractor something3DisplayInteractor;
+        private readonly AppDbContext ctx;
 
-        public HomeController(Something3Interactor something3Interactor, Something3DisplayInteractor something3DisplayInteractor)
+        public HomeController(Something3Interactor something3Interactor, Something3DisplayInteractor something3DisplayInteractor, AppDbContext ctx)
         {
             this.something3Interactor = something3Interactor;
             this.something3DisplayInteractor = something3DisplayInteractor;
+            this.ctx = ctx;
         }
         [HttpPost]
         public void Create([FromQuery] string fullName)
@@ -22,9 +27,14 @@ namespace WebApplication1.Controllers
             something3Interactor.CreateSomething3(fullName);
         }
         [HttpGet]
-        public List<Something3> GetList()
+        public List<Something3WithId> GetList()
         {
-            return something3DisplayInteractor.GetSomething3List().ToList();
+            var ret = ctx.Something3s.Select(x => new Something3WithId()
+            {
+                Id = EF.Property<int>(x, "Id"),
+                FullName = x.FullName
+            }).ToList();
+            return ret;
         }
     }
 }
