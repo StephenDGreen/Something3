@@ -19,9 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Something3.Database", "Some
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Something3.DatabaseTests", "Something3.DatabaseTests\Something3.DatabaseTests.csproj", "{70C0B1CA-1776-4083-B29F-75E83F5BA3AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Something3.UI", "Something3.UI\Something3.UI.csproj", "{70300339-B919-4C3A-B1A4-DEBFF9E18143}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Something3.API", "Something3.API\Something3.API.csproj", "{70300339-B919-4C3A-B1A4-DEBFF9E18143}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Something3.IntegrationTests", "Something3.IntegrationTests\Something3.IntegrationTests.csproj", "{6A76CEAB-D6AE-4BDC-AACF-2256D35E9D14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Something3.IntegrationTests", "Something3.IntegrationTests\Something3.IntegrationTests.csproj", "{6A76CEAB-D6AE-4BDC-AACF-2256D35E9D14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

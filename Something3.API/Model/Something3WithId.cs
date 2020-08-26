@@ -1,4 +1,4 @@
-﻿namespace Something3.UI.Controllers
+﻿namespace Something3.API.Controllers
 {
     public class Something3WithId
     {

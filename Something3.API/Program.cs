@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Something3.UI
+namespace Something3.API
 {
     public class Program
     {

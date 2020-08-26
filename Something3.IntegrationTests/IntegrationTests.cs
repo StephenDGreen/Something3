@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
-using Something3.UI.Controllers;
+using Something3.API.Controllers;
 using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using Something3.DatabaseTests.Infrastructure.Factories;
 

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Something3.UI
+namespace Something3.API
 {
     public class Startup
     {
@@ -16,7 +16,7 @@ namespace Something3.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(
-                options => options.UseInMemoryDatabase(nameof(Something3.UI))
+                options => options.UseInMemoryDatabase(nameof(Something3.API))
                 );
             services.AddSingleton<ISomething3Factory, Something3Factory>();
             services.AddScoped<ISomething3Interactor,Something3Interactor>();

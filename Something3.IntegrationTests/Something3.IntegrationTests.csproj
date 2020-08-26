@@ -15,9 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Something3.API\Something3.API.csproj" />
     <ProjectReference Include="..\Something3.Application\Something3.Application.csproj" />
     <ProjectReference Include="..\Something3.DatabaseTests\Something3.DatabaseTests.csproj" />
-    <ProjectReference Include="..\Something3.UI\Something3.UI.csproj" />
   </ItemGroup>
 
 </Project>
