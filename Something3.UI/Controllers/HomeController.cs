@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
-namespace WebApplication1.Controllers
+namespace Something3.UI.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,7 +1,7 @@
 ﻿using ClassLibrary1.Database;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebApplication1.Controllers.Tests
+namespace Something3.IntegrationTests
 {
     public class DbContextFactory
     {
@@ -11,6 +11,5 @@ namespace WebApplication1.Controllers.Tests
 
             return new AppDbContext(options);
         }
-
     }
 }

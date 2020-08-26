@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.Controllers
+﻿namespace Something3.UI.Controllers
 {
     public class Something3WithId
     {
