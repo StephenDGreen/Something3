@@ -19,8 +19,8 @@ namespace WebApplication1
                 options => options.UseInMemoryDatabase(nameof(WebApplication1))
                 );
             services.AddSingleton<ISomething3Factory, Something3Factory>();
-            services.AddScoped<Something3Interactor>();
-            services.AddScoped<Something3DisplayInteractor>();
+            services.AddScoped<ISomething3Interactor,Something3Interactor>();
+            services.AddScoped<ISomething3DisplayInteractor,Something3DisplayInteractor>();
             services.AddScoped<IClassLibraryPersistence, ClassLibraryPersistence>();
             services.AddControllers();
         }

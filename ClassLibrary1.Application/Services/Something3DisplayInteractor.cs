@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ClassLibrary1.Application.Services
 {
-    public class Something3DisplayInteractor
+    public class Something3DisplayInteractor : ISomething3DisplayInteractor
     {
         private readonly IClassLibraryPersistence persistence;
 

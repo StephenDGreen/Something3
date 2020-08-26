@@ -11,11 +11,11 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly Something3Interactor something3Interactor;
-        private readonly Something3DisplayInteractor something3DisplayInteractor;
+        private readonly ISomething3Interactor something3Interactor;
+        private readonly ISomething3DisplayInteractor something3DisplayInteractor;
         private readonly AppDbContext ctx;
 
-        public HomeController(Something3Interactor something3Interactor, Something3DisplayInteractor something3DisplayInteractor, AppDbContext ctx)
+        public HomeController(ISomething3Interactor something3Interactor, ISomething3DisplayInteractor something3DisplayInteractor, AppDbContext ctx)
         {
             this.something3Interactor = something3Interactor;
             this.something3DisplayInteractor = something3DisplayInteractor;
@@ -31,23 +31,23 @@ namespace WebApplication1.Controllers
         [Route("api/things")]
         public List<Something3WithId> GetList()
         {
-            var ret = ctx.Something3s.Select(x => new Something3WithId()
-            {
-                Id = EF.Property<int>(x, "Id"),
-                FullName = x.FullName
-            }).ToList();
-            return ret;
+            return GetThings();
         }
+
         [HttpGet]
         [Route("api/things/{id:int?}")]
         public Something3WithId Get(int id)
         {
-            var ret = ctx.Something3s.Select(x => new Something3WithId()
+            return GetThings().FirstOrDefault(y => y.Id == id);
+        }
+
+        public List<Something3WithId> GetThings()
+        {
+            return ctx.Something3s.Select(x => new Something3WithId()
             {
                 Id = EF.Property<int>(x, "Id"),
                 FullName = x.FullName
-            }).FirstOrDefault(y => y.Id == id);
-            return ret;
+            }).ToList();
         }
     }
 }
