@@ -1,6 +1,6 @@
-using ClassLibrary1.Application.Services;
-using ClassLibrary1.Core;
-using ClassLibrary1.Database;
+using Something3.Application.Services;
+using Something3.Core;
+using Something3.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

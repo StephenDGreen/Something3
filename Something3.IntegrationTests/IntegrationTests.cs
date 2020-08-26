@@ -1,13 +1,14 @@
-using ClassLibrary1.Application.Services;
-using ClassLibrary1.Core;
-using ClassLibrary1.Core.Model;
-using ClassLibrary1.Database;
+using Something3.Application.Services;
+using Something3.Core;
+using Something3.Core.Model;
+using Something3.Database;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
 using Something3.UI.Controllers;
 using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+using Something3.DatabaseTests.Infrastructure.Factories;
 
 namespace Something3.IntegrationTests
 {
@@ -20,7 +21,7 @@ namespace Something3.IntegrationTests
             var mockInteractor = new Mock<ISomething3Interactor>();
             var mockDisplayInteractor = new Mock<ISomething3DisplayInteractor>();
             int expectedId = 1;
-            var something3 = new ClassLibrary1.Core.Model.Something3()
+            var something3 = new Something3.Core.Model.Something3()
             {
                 FullName = "My Pal"
             };

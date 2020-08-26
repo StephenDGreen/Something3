@@ -1,6 +1,6 @@
-﻿using ClassLibrary1.Application.Services;
-using ClassLibrary1.Core.Model;
-using ClassLibrary1.Database;
+﻿using Something3.Application.Services;
+using Something3.Core.Model;
+using Something3.Database;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
