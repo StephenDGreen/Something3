@@ -21,24 +21,28 @@ namespace Something3.API.Controllers
             this.something3DisplayInteractor = something3DisplayInteractor;
             this.ctx = ctx;
         }
+
         [HttpPost]
         [Route("api/things")]
-        public void Create([FromQuery] string fullName)
+        public IActionResult Create([FromQuery] string fullName)
         {
             something3Interactor.CreateSomething3(fullName);
+            return Ok();
         }
         [HttpGet]
         [Route("api/things")]
-        public List<Something3WithId> GetList()
+        public IActionResult GetList()
         {
-            return GetThings();
+            var result = GetThings();
+            return Ok(result);
         }
 
         [HttpGet]
         [Route("api/things/{id:int?}")]
-        public Something3WithId Get(int id)
+        public IActionResult Get(int id)
         {
-            return GetThings().FirstOrDefault(y => y.Id == id);
+            var result = GetThings().FirstOrDefault(y => y.Id == id);
+            return Ok(result);
         }
 
         public List<Something3WithId> GetThings()
