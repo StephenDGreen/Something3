@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Something3.Application\Something3.Application.csproj" />
+    <ProjectReference Include="..\Something3.DatabaseTests\Something3.DatabaseTests.csproj" />
   </ItemGroup>
 
 </Project>

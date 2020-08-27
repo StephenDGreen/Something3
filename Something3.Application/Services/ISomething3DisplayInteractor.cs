@@ -1,4 +1,5 @@
-﻿using Something3.Core.Model;
+﻿using Something3.Application.ViewModel;
+using Something3.Core.Model;
 using System.Collections.Generic;
 
 namespace Something3.Application.Services
@@ -6,5 +7,6 @@ namespace Something3.Application.Services
     public interface ISomething3DisplayInteractor
     {
         List<Core.Model.Something3> GetSomething3List();
+        List<Something3WithId> GetThings();
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using Something3.Application.ViewModel;
 
 namespace Something3.API.Controllers
 {
@@ -33,7 +34,7 @@ namespace Something3.API.Controllers
         [Route("api/things")]
         public IActionResult GetList()
         {
-            var result = GetThings();
+            var result = something3DisplayInteractor.GetThings();
             return Ok(result);
         }
 
@@ -41,17 +42,8 @@ namespace Something3.API.Controllers
         [Route("api/things/{id:int?}")]
         public IActionResult Get(int id)
         {
-            var result = GetThings().FirstOrDefault(y => y.Id == id);
+            var result = something3DisplayInteractor.GetThings().FirstOrDefault(y => y.Id == id);
             return Ok(result);
-        }
-
-        public List<Something3WithId> GetThings()
-        {
-            return ctx.Something3s.Select(x => new Something3WithId()
-            {
-                Id = EF.Property<int>(x, "Id"),
-                FullName = x.FullName
-            }).ToList();
         }
     }
 }

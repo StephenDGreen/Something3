@@ -1,4 +1,8 @@
-﻿namespace Something3.API.Controllers
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Something3.Application.ViewModel
 {
     public class Something3WithId
     {
