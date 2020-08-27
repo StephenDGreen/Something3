@@ -25,14 +25,23 @@ namespace Something3.API.Controllers
 
         [HttpPost]
         [Route("api/things")]
-        public IActionResult Create([FromQuery] string fullName)
+        public ActionResult Create([FromForm] string fullName)
         {
+            if(fullName.Length < 1)
+                return GetAll();
+
             something3Interactor.CreateSomething3(fullName);
-            return Ok();
+            return GetAll();
         }
+
         [HttpGet]
         [Route("api/things")]
-        public IActionResult GetList()
+        public ActionResult GetList()
+        {
+            return GetAll();
+        }
+
+        private ActionResult GetAll()
         {
             var result = something3DisplayInteractor.GetThings();
             return Ok(result);
@@ -40,7 +49,7 @@ namespace Something3.API.Controllers
 
         [HttpGet]
         [Route("api/things/{id:int?}")]
-        public IActionResult Get(int id)
+        public ActionResult Get(int id)
         {
             var result = something3DisplayInteractor.GetThings().FirstOrDefault(y => y.Id == id);
             return Ok(result);

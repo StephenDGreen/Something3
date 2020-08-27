@@ -1,9 +1,13 @@
 @page "/fetchdata"
 @inject HttpClient Http
+@using System.Text.Json;
+@using System.Text.Json.Serialization;
+@using System.Text;
+@using System;
 
-<h1>Weather forecast</h1>
+<h1>Something Random</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>A Blazor WASM / C# full stack.</p>
 
 @if (somethings == null)
 {
@@ -28,9 +32,37 @@ else
             }
         </tbody>
     </table>
+    <button class="btn btn-primary" @onclick="AddSomething">
+        Add Something
+    </button>
+
+
 }
 
 @code {
+    private readonly Random _random = new Random();
+
+    private int RandomNumber(int min, int max)
+    {
+        return _random.Next(min, max);
+    }
+
+    private string RandomString(int size, bool lowerCase = false)
+    {
+        var builder = new StringBuilder(size);
+
+        char offset = lowerCase ? 'a' : 'A';
+        const int lettersOffset = 26; 
+
+        for (var i = 0; i < size; i++)
+        {
+            var @char = (char)_random.Next(offset, offset + lettersOffset);
+            builder.Append(@char);
+        }
+
+        return lowerCase ? builder.ToString().ToLower() : builder.ToString();
+    }
+
     private Something3WithId[] somethings;
 
     protected override async Task OnInitializedAsync()
@@ -38,10 +70,27 @@ else
         somethings = await Http.GetFromJsonAsync<Something3WithId[]>("https://localhost:44327/api/things");
     }
 
+    protected async Task AddSomething()
+    {
+        var value = new Dictionary<string, string>
+        {
+        { "FullName", RandomString(RandomNumber(10,20),true) }
+        };
+
+        var content = new FormUrlEncodedContent(value);
+        var response = await Http.PostAsync(@"https://localhost:44327/api/things", content);
+        somethings = response.Content.ReadFromJsonAsync<Something3WithId[]>().Result;
+    }
+
 
     public class Something3WithId
     {
         public int Id { get; set; }
+        public string FullName { get; set; }
+    }
+
+    public class Something3
+    {
         public string FullName { get; set; }
     }
 }

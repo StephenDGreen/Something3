@@ -22,7 +22,8 @@ namespace Something3.API
                 options.AddPolicy(name: DevSomething3AllowSpecificOrigins,
                                   builder =>
                                   {
-                                      builder.WithOrigins("https://localhost:44380");
+                                      builder.WithOrigins("https://localhost:44380")
+                                      .AllowAnyMethod().AllowAnyHeader();
                                   });
             });
             services.AddDbContext<AppDbContext>(
