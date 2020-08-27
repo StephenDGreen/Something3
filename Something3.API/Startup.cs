@@ -11,10 +11,20 @@ namespace Something3.API
 {
     public class Startup
     {
+        readonly string DevSomething3AllowSpecificOrigins = "_devSomething3AllowSpecificOrigins";
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: DevSomething3AllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("https://localhost:44380");
+                                  });
+            });
             services.AddDbContext<AppDbContext>(
                 options => options.UseInMemoryDatabase(nameof(Something3.API))
                 );
@@ -34,6 +44,11 @@ namespace Something3.API
             }
 
             app.UseRouting();
+
+            if (env.IsDevelopment())
+            {
+                app.UseCors(DevSomething3AllowSpecificOrigins);
+            }
 
             app.UseEndpoints(endpoints =>
             {
