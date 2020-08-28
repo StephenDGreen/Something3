@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Something3.API", "Something
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Something3.IntegrationTests", "Something3.IntegrationTests\Something3.IntegrationTests.csproj", "{6A76CEAB-D6AE-4BDC-AACF-2256D35E9D14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Something3.UI", "Something3.UI\Something3.UI.csproj", "{6BCCB6A9-1C3C-40B1-887C-56B19BE420F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Something3.UI", "Something3.UI\Something3.UI.csproj", "{6BCCB6A9-1C3C-40B1-887C-56B19BE420F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

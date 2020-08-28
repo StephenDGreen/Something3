@@ -1,4 +1,5 @@
-﻿using Something3.UI.ViewModel;
+﻿using Microsoft.AspNetCore.Components;
+using Something3.UI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -11,7 +12,8 @@ namespace Something3.UI.Pages
     public partial class CreateData
     {
         private readonly Random _random = new Random();
-
+        [Inject]
+        public HttpClient Http { get; set; }
         private int RandomNumber(int min, int max)
         {
             return _random.Next(min, max);
