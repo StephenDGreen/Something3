@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
+using Something3.Application.ViewModel;
 
 namespace Something3.UI.Pages
 {
@@ -50,15 +51,5 @@ namespace Something3.UI.Pages
             var response = await Http.PostAsync(@"https://localhost:44327/api/things", content);
             somethings = response.Content.ReadFromJsonAsync<Something3WithId[]>().Result;
         }
-    }
-    public class Something3WithId
-    {
-        public int Id { get; set; }
-        public string FullName { get; set; }
-    }
-
-    public class Something3
-    {
-        public string FullName { get; set; }
     }
 }
