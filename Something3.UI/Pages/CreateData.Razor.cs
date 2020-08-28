@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Something3.UI.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
-using Something3.Application.ViewModel;
 
 namespace Something3.UI.Pages
 {
