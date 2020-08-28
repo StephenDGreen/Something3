@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Something3.Application\Something3.Application.csproj" />
-    <ProjectReference Include="..\Something3.Core\Something3.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
