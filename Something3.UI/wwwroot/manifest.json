@@ -1,6 +1,6 @@
 {
-  "name": "Something3.UI",
-  "short_name": "Something3.UI",
+  "name": "Something Random",
+  "short_name": "Something Random",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
