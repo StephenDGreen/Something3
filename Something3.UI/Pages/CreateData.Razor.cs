@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Something3.UI.Pages
 {
-    public partial class CreateData
+    public partial class CreateData : ComponentBase
     {
         private readonly Random _random = new Random();
         [Inject]
