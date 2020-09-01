@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Something3.Application\Something3.Application.csproj" />
-    <ProjectReference Include="..\Something3.DatabaseTests\Something3.DatabaseTests.csproj" />
   </ItemGroup>
 
 </Project>

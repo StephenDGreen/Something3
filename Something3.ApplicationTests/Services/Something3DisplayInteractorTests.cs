@@ -1,20 +1,17 @@
-﻿using Something3.Application.Services;
-using Something3.Core;
-using Something3.Core.Model;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using System.Collections.Generic;
-using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-using Something3.DatabaseTests.Infrastructure.Factories;
-using Something3.Database;
+﻿using Moq;
 using Something3.Application.ViewModel;
+using Something3.Core;
+using Something3.Database;
+using Something3.DatabaseTests.Infrastructure.Factories;
+using System.Collections.Generic;
+using Xunit;
+using static Xunit.Assert;
 
 namespace Something3.Application.Services.Tests
 {
-    [TestClass()]
     public class Something3DisplayInteractorTests
     {
-        [TestMethod()]
+        [Fact]
         public void DisplaySomething3__DisplaysSomething3()
         {
             //arrange
@@ -25,11 +22,11 @@ namespace Something3.Application.Services.Tests
             Something3DisplayInteractor interactor = new Something3DisplayInteractor(mockPersistence.Object);
             //act
             List<Core.Model.Something3> something = interactor.GetSomething3List();
-            AreEqual(something3.Count, something.Count);
-            AreEqual(something3[something3.Count - 1].FullName, something[something.Count - 1].FullName);
+            Equal(something3.Count, something.Count);
+            Equal(something3[something3.Count - 1].FullName, something[something.Count - 1].FullName);
         }
 
-        [TestMethod()]
+        [Fact]
         public void HomeController__GetThings__ReturnsListOfSomething3WithId()
         {
             var mockInteractor = new Mock<ISomething3Interactor>();
@@ -51,8 +48,8 @@ namespace Something3.Application.Services.Tests
                 var interactor = new Something3DisplayInteractor(persistence, ctx);
 
                 List<Something3WithId> results = interactor.GetThings();
-                AreEqual(something3.FullName, results[0].FullName);
-                AreEqual(expectedId, results[0].Id);
+                Equal(something3.FullName, results[0].FullName);
+                Equal(expectedId, results[0].Id);
             }
         }
     }
