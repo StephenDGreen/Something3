@@ -1,7 +1,6 @@
-﻿using Something3.Core;
-using Something3.Core.Model;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Something3.Core;
 using Something3.DatabaseTests.Infrastructure.Factories;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 

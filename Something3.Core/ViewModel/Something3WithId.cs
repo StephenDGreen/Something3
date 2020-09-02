@@ -1,4 +1,4 @@
-﻿namespace Something3.Application.ViewModel
+﻿namespace Something3.Core.ViewModel
 {
     public class Something3WithId
     {
