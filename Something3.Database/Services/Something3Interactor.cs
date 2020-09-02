@@ -1,8 +1,9 @@
 ﻿using Something3.Core;
+using Something3.Core.Services;
 
 namespace Something3.Database.Services
 {
-    public class Something3Interactor 
+    public class Something3Interactor : ISomething3Interactor
     {
         private ISomething3Factory something3Factory;
         private readonly IClassLibraryPersistence persistence;

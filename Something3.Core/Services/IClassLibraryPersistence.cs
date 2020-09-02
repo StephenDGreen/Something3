@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Something3.Core
+namespace Something3.Core.Services
 {
     public interface IClassLibraryPersistence
     {

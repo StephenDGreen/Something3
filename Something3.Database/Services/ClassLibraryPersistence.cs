@@ -1,8 +1,8 @@
-﻿using Something3.Core;
+﻿using Something3.Core.Services;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Something3.Database
+namespace Something3.Database.Services
 {
     public class ClassLibraryPersistence : IClassLibraryPersistence
     {
