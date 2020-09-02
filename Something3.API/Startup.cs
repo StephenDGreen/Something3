@@ -1,11 +1,11 @@
-using Something3.Application.Services;
-using Something3.Core;
-using Something3.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Something3.Core;
+using Something3.Database;
+using Something3.Database.Services;
 
 namespace Something3.API
 {
@@ -30,8 +30,8 @@ namespace Something3.API
                 options => options.UseInMemoryDatabase(nameof(Something3.API))
                 );
             services.AddSingleton<ISomething3Factory, Something3Factory>();
-            services.AddScoped<ISomething3Interactor,Something3Interactor>();
-            services.AddScoped<ISomething3DisplayInteractor,Something3DisplayInteractor>();
+            services.AddScoped<Something3Interactor>();
+            services.AddScoped<Something3DisplayInteractor>();
             services.AddScoped<IClassLibraryPersistence, ClassLibraryPersistence>();
             services.AddControllers();
         }

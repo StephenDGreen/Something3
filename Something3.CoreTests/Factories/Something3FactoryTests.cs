@@ -1,6 +1,5 @@
-﻿using Something3.Core;
-using Something3.Core.Model;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Something3.Core;
 
 namespace Something3.CoreTests
 {
