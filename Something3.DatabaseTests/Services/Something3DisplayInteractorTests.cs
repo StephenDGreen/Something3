@@ -1,13 +1,14 @@
 ﻿using Moq;
-using Something3.Application.ViewModel;
+using Something3.Core.ViewModel;
 using Something3.Core;
 using Something3.Database;
 using Something3.DatabaseTests.Infrastructure.Factories;
 using System.Collections.Generic;
 using Xunit;
 using static Xunit.Assert;
+using Something3.Application.Services;
 
-namespace Something3.Application.Services.Tests
+namespace Something3.Database.Services.Tests
 {
     public class Something3DisplayInteractorTests
     {
@@ -29,7 +30,7 @@ namespace Something3.Application.Services.Tests
         [Fact]
         public void HomeController__GetThings__ReturnsListOfSomething3WithId()
         {
-            var mockInteractor = new Mock<ISomething3Interactor>();
+            var mockInteractor = new Mock<Something3Interactor>();
             int expectedId = 1;
             var something3 = new Something3.Core.Model.Something3()
             {

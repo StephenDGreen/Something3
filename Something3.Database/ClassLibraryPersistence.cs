@@ -1,5 +1,4 @@
 ﻿using Something3.Core;
-using Something3.Core.Model;
 using System.Collections.Generic;
 using System.Linq;
 
