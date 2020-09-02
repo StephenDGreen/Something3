@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Xunit;
 using static Xunit.Assert;
 using Something3.Application.Services;
+using Something3.Core.Services;
 
 namespace Something3.Database.Services.Tests
 {
