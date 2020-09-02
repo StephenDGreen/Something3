@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Something3.Core;
+using Something3.Core.Services;
 using Something3.Core.ViewModel;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Something3.Database.Services
 {
-    public class Something3DisplayInteractor 
+    public class Something3DisplayInteractor : ISomething3DisplayInteractor
     {
         private readonly IClassLibraryPersistence persistence;
         private readonly AppDbContext ctx;

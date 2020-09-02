@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Something3.Core;
+using Something3.Core.Services;
+using Something3.Database.Services;
 using Something3.DatabaseTests.Infrastructure.Factories;
 using System.Linq;
 using static Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
