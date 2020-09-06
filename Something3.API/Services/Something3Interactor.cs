@@ -1,7 +1,7 @@
 ﻿using Something3.Core;
 using Something3.Core.Services;
 
-namespace Something3.Database.Services
+namespace Something3.API.Services
 {
     public class Something3Interactor : ISomething3Interactor
     {
