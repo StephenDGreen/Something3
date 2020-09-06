@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Something3.IntegrationTests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Something3.UI", "Something3.UI\Something3.UI.csproj", "{6BCCB6A9-1C3C-40B1-887C-56B19BE420F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Something3.APITests", "Something3.APITests\Something3.APITests.csproj", "{7E9FAB0A-6646-468C-95EF-470EDF2F8E70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{6BCCB6A9-1C3C-40B1-887C-56B19BE420F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BCCB6A9-1C3C-40B1-887C-56B19BE420F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BCCB6A9-1C3C-40B1-887C-56B19BE420F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9FAB0A-6646-468C-95EF-470EDF2F8E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9FAB0A-6646-468C-95EF-470EDF2F8E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9FAB0A-6646-468C-95EF-470EDF2F8E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9FAB0A-6646-468C-95EF-470EDF2F8E70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

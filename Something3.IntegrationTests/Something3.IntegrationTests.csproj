@@ -17,4 +17,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Something3.API\Something3.API.csproj" />
+    <ProjectReference Include="..\Something3.Core\Something3.Core.csproj" />
+    <ProjectReference Include="..\Something3.DatabaseTests\Something3.DatabaseTests.csproj" />
+  </ItemGroup>
+
 </Project>
